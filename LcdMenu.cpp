@@ -26,6 +26,12 @@ void LcdMenu::navigateUp () {
                        shouldInterruptInfinity(_settings) ?
                             (_number_of_renderers % _lcd_height) :
                             (_lcd_height - _render_from_index));
+
+                // This happens when should interrupt is true and
+                // _number_of_renderers % _lcd_height => 0
+                if (_render_from_index == _number_of_renderers) {
+                    _render_from_index = _number_of_renderers - _lcd_height;
+                }
             }
             else if (_render_from_index % _lcd_height != 0 || _render_from_index == 0) {
                 _render_from_index = 0;
@@ -87,6 +93,12 @@ void LcdMenu::navigateDown () {
             }
             else if (_render_from_index >= _number_of_renderers) {
                 _render_from_index = _number_of_renderers - (_number_of_renderers % _lcd_height);
+
+                // This happens when should interrupt is true and
+                // _number_of_renderers % _lcd_height => 0
+                if (_render_from_index == _number_of_renderers) {
+                    _render_from_index = _number_of_renderers - _lcd_height;
+                }
             }
         }
         else {
