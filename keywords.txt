@@ -1,7 +1,7 @@
-LcdMenu KEYWORD1
+LcdMenu	KEYWORD1
 
-navigateUp KEYWORD2
-navigateDown KEYWORD2
+navigateUp	KEYWORD2
+navigateDown	KEYWORD2
 
-render KEYWORD2
-getCurrentRendererIndex KEYWORD2
+render	KEYWORD2
+getCurrentRendererIndex	KEYWORD2
